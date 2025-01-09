@@ -10,6 +10,19 @@ import { characters } from "../data/characters";
 
 export default function SelectCharacter() {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SearchParamsWrapper setCurrentIndex={setCurrentIndex} />
+    </Suspense>
+  );
+}
+
+function SearchParamsWrapper({
+  setCurrentIndex,
+}: {
+  setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
+}) {
   const searchParams = useSearchParams();
   const gender = searchParams.get("gender") || "male";
 
