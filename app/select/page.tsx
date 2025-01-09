@@ -13,14 +13,19 @@ export default function SelectCharacter() {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <SearchParamsWrapper setCurrentIndex={setCurrentIndex} />
+      <SearchParamsWrapper
+        currentIndex={currentIndex}
+        setCurrentIndex={setCurrentIndex}
+      />
     </Suspense>
   );
 }
 
 function SearchParamsWrapper({
+  currentIndex,
   setCurrentIndex,
 }: {
+  currentIndex: number;
   setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
 }) {
   const searchParams = useSearchParams();
