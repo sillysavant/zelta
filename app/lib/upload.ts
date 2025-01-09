@@ -1,6 +1,3 @@
-import path from "path";
-import fs from "fs/promises";
-import { Profile } from "@/types/profile";
 import axios from "axios";
 
 // Create an axios instance with base URL

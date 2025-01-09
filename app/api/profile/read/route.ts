@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
-export async function GET(request: Request) {
+export async function GET() {
   try {
     // Create profiles directory in project root
     const rootDir = process.cwd();

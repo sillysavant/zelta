@@ -56,9 +56,6 @@ const generateProfilePDF = (profile: Profile) => {
   });
 
   const timestamp = new Date().toISOString().split("T")[0];
-  const filename = `${profile.name
-    .toLowerCase()
-    .replace(/\s+/g, "-")}-profile-${timestamp}.pdf`;
 
   return doc.output("blob");
 };
